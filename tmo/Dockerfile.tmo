@@ -13,7 +13,10 @@ COPY package.json .
 COPY app.js .
 COPY public/ public/
 COPY secret.txt /root/
+# hadolint ignore=DL3008
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    curl
+    curl \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 RUN npm install
 CMD ["npm", "start"]
