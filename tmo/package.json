@@ -1,0 +1,24 @@
+{
+  "name": "tmo",
+  "version": "1.0.0",
+  "description": "Globomantics take me out application.",
+  "scripts": {
+    "start": "node app.js",
+    "debug": "DEBUG=app nodemon app.js"
+  },
+  "author": "Peter Mosmans",
+  "license": "GPLv3",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "node-serialize": "^0.0.4",
+    "nodemon": "^2.0.20"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "env": {
+      "PORT": "8081"
+    }
+  }
+}

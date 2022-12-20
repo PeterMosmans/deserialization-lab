@@ -1,0 +1,19 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Simple vulnerable server
+FROM node:19-buster-slim
+LABEL maintainer="support@go-forward.net" \
+      vendor="Go Forward" \
+      org.label-schema.name="vulnerable" \
+      org.label-schema.description="A simple vulnerable webserver" \
+    org.label-schema.maintainer="support@go-forward.net"
+ENV PORT=80
+
+WORKDIR /app
+COPY package.json .
+COPY app.js .
+COPY public/ public/
+COPY secret.txt /root/
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    curl
+RUN npm install
+CMD ["npm", "start"]

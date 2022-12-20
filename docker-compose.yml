@@ -1,0 +1,29 @@
+---
+version: "3.5"
+
+networks:
+  globomantics:
+  kittens:
+
+services:
+  # Globomantics' Take Me Out server
+  tmo:
+    container_name: tmo
+    build:
+      context: ./tmo
+      dockerfile: Dockerfile.tmo
+    ports:
+      - "80:80"
+    restart: unless-stopped
+    networks:
+      globomantics:
+  # Our local nest, where we can receive HTTP POST data
+  nest:
+    container_name: nest
+    build:
+      context: ./nest
+      dockerfile: Dockerfile.nest
+    restart: unless-stopped
+    networks:
+      kittens:
+      globomantics:

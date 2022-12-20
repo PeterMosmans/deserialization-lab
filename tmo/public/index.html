@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="EN">
+  <head>
+    <title>Globomantics Take Me Out Application Server</title>
+  </head>
+  <body>
+    <h2>Thank you for using the Globomantics take me out server!</h2>
+    <p>
+      Create a new request using the <code><b>/request</b></code> endpoint. The
+      server expects a JSON object, with <code>id</code> and
+      <code>description</code> attributes.
+    </p>
+    <p>Example using <code>curl</code>:</p>
+    <pre>
+curl \
+     -H 'Content-Type: application/json' \
+     --data '{"id": "1", "description": "I would like to walk Dobermans"}' \
+     http://tmo/request
+    </pre>
+  </body>
+</html>

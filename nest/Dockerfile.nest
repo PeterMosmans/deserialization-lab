@@ -1,0 +1,17 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Simple web server that shows POST data
+FROM node:19-buster-slim
+LABEL maintainer="support@go-forward.net" \
+      vendor="Go Forward" \
+      org.label-schema.name="nest" \
+      org.label-schema.description="A simple http server" \
+    org.label-schema.maintainer="support@go-forward.net"
+ENV PORT=80
+
+# Curl is always handy for pen testing
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    curl
+
+WORKDIR /app
+COPY server.js /app
+CMD ["node", "server.js"]
