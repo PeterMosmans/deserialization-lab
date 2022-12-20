@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 const server = http.createServer((req, res) => {
   const now = new Date();
   console.log(
-    `Request at ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`
+    `Request received at ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`
   );
   const query = url.parse(req.url, true).search;
   if (query) {
