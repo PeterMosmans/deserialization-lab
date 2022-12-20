@@ -20,7 +20,7 @@ find /home/*/.zshrc -exec sh -c 'grep -qL NODE_PATH {} || echo "export NODE_PATH
 grep -qL tmo /etc/hosts || echo "127.0.0.1 tmo" >> /etc/hosts
 # Clone git repository containing the servers
 mkdir -p /srv/lab
-git clone --depth=1 https://github.com/PeterMosmans/ps-deserialization-lab /srv/lab
+git clone --depth=1 https://github.com/PeterMosmans/deserialization-lab /srv/lab
 
 pushd /srv/lab && docker-compose up --detach
 
