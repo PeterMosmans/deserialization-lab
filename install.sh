@@ -21,9 +21,10 @@ grep -qL tmo /etc/hosts || echo "127.0.0.1 tmo" >> /etc/hosts
 # Clone git repository containing the servers
 mkdir -p /srv/lab
 git clone --depth=1 https://github.com/PeterMosmans/deserialization-lab /srv/lab
-
 pushd /srv/lab && docker-compose up --detach
 
-# Note that purposefully, docker logs are shown in the foreground
-# This way, students can see their results
+# Note that purposefully, a tail of the log is shown in the foreground
+# This way, students immediately can see the results
+echo
+echo
 docker logs -f nest
