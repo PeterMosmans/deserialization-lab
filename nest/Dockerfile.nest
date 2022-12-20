@@ -1,5 +1,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
-# Simple web server that shows POST data
+# Simple web server that can be used for exfiltration
+
 FROM node:19-buster-slim
 LABEL maintainer="support@go-forward.net" \
       vendor="Go Forward" \
@@ -9,8 +10,11 @@ LABEL maintainer="support@go-forward.net" \
 ENV PORT=80
 
 # Curl is always handy for pen testing
+# hadolint ignore=DL3008
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    curl
+    curl \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 COPY server.js /app
