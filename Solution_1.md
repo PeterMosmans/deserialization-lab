@@ -101,7 +101,8 @@ So, you can execute system commands using the `exec` function from the
     to an external exfiltration server.
 
 While the infinite loop is running, let's open up a text editor, and modify the
-`payload.json`. A text editor that can be used is `mousepad`.
+`payload.json`. A text editor that we can use is `mousepad`, but of course, any
+plain text editor would do.
 
 ```bash
 mousepad payload.json

@@ -42,7 +42,8 @@ To help you get started, both of these servers, `tmo` as well as `nest` will be
 built and started automatically. This way, you can focus on finding and
 exploiting the insecure deserialization vulnerability.
 
-On a Linux distribution, in a root terminal window, execute the command
+On a Debian Linux distribution (for example Kali), in a root terminal window,
+execute the command
 
 ```bash
 curl https://raw.githubusercontent.com/PeterMosmans/deserialization-lab/main/install.sh | bash
@@ -50,6 +51,9 @@ curl https://raw.githubusercontent.com/PeterMosmans/deserialization-lab/main/ins
 
 This will download the repository containing all required files, install the
 necessary tools, and start both servers.
+
+Please note that several tools, modules and configuration settings will be
+installed "system-wide".
 
 Note that the terminal remains open: This is by design. Server log messages from
 `nest` are shown, which can help you in executing the infiltration part of the
