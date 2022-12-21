@@ -7,8 +7,16 @@
 set -e
 
 apt update
-apt install -y curl docker.io docker-compose git inotify-tools nodejs npm
-# The node-serialize pacakge should be available for all users
+apt install -y \
+    curl \
+    docker-compose \
+    docker.io \
+    git \
+    inotify-tools \
+    mousepad \
+    nodejs \
+    npm
+# The node-serialize package should be available for all users
 npm install --global node-serialize
 # Ensure that global packages are available for all users
 # Ensure that the NODE_PATH environment variable is set by default for bash
