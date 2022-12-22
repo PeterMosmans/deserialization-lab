@@ -52,16 +52,17 @@ curl https://raw.githubusercontent.com/PeterMosmans/deserialization-lab/main/ins
 This will download the repository containing all required files, install the
 necessary tools, and start both servers.
 
-Please note that several tools, modules and configuration settings will be
-installed "system-wide".
+:blue_book: **Note**: Please note that several tools, modules and configuration
+settings will be installed "system-wide". The setup script is meant to be
+performed on a "lab environment".
 
 Note that the terminal remains open: This is by design. Server log messages from
 `nest` are shown, which can help you in executing the infiltration part of the
 attack.
 
-**Note** If you want to see what's going on with `tmo`, you can view its logs
-using the command `docker logs tmo`. However, usually you're unable to view the
-logs of the server that you are attacking.
+:blue_book: **Note**: If you want to see what's going on with `tmo`, you can
+view its logs using the command `docker logs tmo`. However, usually you're
+unable to view the logs of the server that you are attacking.
 
 As you will be using multiple applications (terminals and editors) at the same
 time, it makes sense to split up the screen into two parts, and/or use two
