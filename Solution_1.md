@@ -57,8 +57,8 @@ Open up another terminal window, and see what happens when you `touch` the file
 `payload.json`. This should fire off an event, and execute the `curl` command
 for you.
 
-**Remark** Long lines can be separated using the backslash. This makes it easier
-reading the command.
+:blue_book: **Note**: Long lines can be separated using the backslash. This
+makes it easier reading the full command.
 
 ## Executing commands
 
@@ -108,8 +108,9 @@ plain text editor would do.
 mousepad payload.json
 ```
 
-**Remark** Of course any text editor will do: Mousepad is just a simple editor,
-where you can save files using Control-S. Control-Q will quit the program.
+:blue_book: **Note**: Of course any text editor will do: Mousepad is just a
+simple editor, where you can save files using Control-S. Control-Q will quit the
+program.
 
 Let's modify the payload in such a way, that the `tmo` server accesses the
 `nest` server. This way, we can exfiltrate data.

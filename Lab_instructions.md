@@ -11,7 +11,7 @@
    application server is supposed to do. This is usually the first step,
    understanding the "Happy Path".
 
-**Question** What do you think the `/request` endpoint expects?
+:grey_question: **Question**: What do you think the `/request` endpoint expects?
 
 2. You can close the browser window, as we won't be needing it anymore during
    our lab. Open up another terminal window, and rearrange both terminal windows
@@ -27,9 +27,9 @@
 curl -v http://tmo/
 ```
 
-**Remark** If you want, you can also view the logs of the `tmo` server using
-`sudo docker logs tmo`. In real-world scenarios you don't have the luxury of
-seeing server debug messages, so be sure to make the best of it now!
+:blue_book: **Note**: If you want, you can also view the logs of the `tmo`
+server using `sudo docker logs tmo`. In real-world scenarios you don't have the
+luxury of seeing server debug messages, so be sure to make the best of it now!
 
 4. Apparently, the ticketing server expects JSON objects on the endpoint
    `/request`. The object also needs to have an `id` and `description`
@@ -39,7 +39,7 @@ seeing server debug messages, so be sure to make the best of it now!
 curl --data '{"id":"1","description":"text"}' http://tmo/request
 ```
 
-**Question**: Can you see why this doesn't seem to work?
+:grey_question: **Question**: Can you see why this doesn't seem to work?
 
 5. The application type is not specified correctly. You can verify this by
    adding the `-v` parameter to the `curl` command.
@@ -65,8 +65,8 @@ curl --data '{"id":"1","description":"text"}' -H 'Content-Type: application/json
    Let's create our own JavaScript object, convert it to JSON, and send it to
    the server.
 
-**Remark** JSON, or JavaScript Object Notation is a data format using the
-JavaScript syntax. Keys as well as values are surrounded by double quotes.
+:blue_book: **Note**: JSON, or JavaScript Object Notation is a data format using
+the JavaScript syntax. Keys as well as values are surrounded by double quotes.
 
 Using the command `node` we can execute NodeJS statements on the command line
 using a Read-Evaluate-Print Loop, or REPL. Start the `node` REPL with the
@@ -76,7 +76,7 @@ command `node`.
 node
 ```
 
-**Remark** You can always exit the REPL using Control-D
+:blue_book: **Note**: You can always exit the REPL using Control-D
 
 Within the `node` REPL, create a `request` object. When not using the `var`
 keyword, the value will be printed automatically.
@@ -156,7 +156,7 @@ serialize.unserialize(serialized)["id"]();
 
 So, using the `node-serialize` module, we can serialize functions. Awesome!
 
-**Note** If you can't import the `node-serialize` function
+:blue_book: **Note**: If you can't import the `node-serialize` function
 (**MODULE_NOT_FOUND**), ensure that the `NODE_ENV` variable for the current user
 is set:
 
@@ -204,7 +204,7 @@ Exit the `node` REPL using Control-D
 curl --data '{"id":"_$$ND_FUNC$$_function(){return(\"result\")}"}' -H "Content-Type: application/json" http://tmo/request
 ```
 
-Is this what you expected?
+:grey_question: **Question**: Is this what you expected?
 
 Now, try to modify the `curl` command, so that it executes the function on the
 server `tmo`, and sets the value of the `id` key to `result`: That would mean we
